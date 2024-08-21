@@ -21,7 +21,7 @@ class StudentListTest {
 
 
     @Test
-    @DisplayName("ทดสอบ AddNewStudent()")
+    @DisplayName("ทดสอบ addNewStudent()")
     void testAddNewStudent() {
         //studentList.addNewStudent("6610450960", "Nanna");
         assertEquals(1, studentList.getStudents().size());
@@ -30,29 +30,29 @@ class StudentListTest {
     }
 
     @Test
-    @DisplayName("ทดสอบ testFindStudentById()")
+    @DisplayName("ทดสอบ findStudentById()")
     void testFindStudentById() {
         //studentList.addNewStudent("6610450960", "Nanna");
         assertEquals("Nanna", studentList.findStudentById("6610450960").getName());
     }
 
     @Test
-    @DisplayName("ทดสอบ testGiveScoreToId()")
+    @DisplayName("ทดสอบ giveScoreToId()")
     void testGiveScoreToId() {
         studentList.giveScoreToId("6610450960", 10);
        assertEquals(100.0,studentList.findStudentById("6610450960").getScore());
     }
 
     @Test
-    @DisplayName("ทดสอบ testViewGradeOfId()")
+    @DisplayName("ทดสอบ viewGradeOfId()")
     void testViewGradeOfId() {
         assertEquals("A", studentList.viewGradeOfId("6610450960"));
 
     }
 
     @Test
-    @DisplayName("ทดสอบ testGetStudents()")
+    @DisplayName("ทดสอบ getStudents()")
     void testGetStudents() {
-        assertEquals("Nanna", studentList.getStudents().get(0).getName());
+        assertEquals(1, studentList.getStudents().size());
     }
 }

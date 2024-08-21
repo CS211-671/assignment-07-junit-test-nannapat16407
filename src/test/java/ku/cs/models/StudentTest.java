@@ -17,8 +17,10 @@ class StudentTest {
     @DisplayName("ทดสอบการเพิ่มคะแนน 45.15 คะแนน")
     void testAddScore(){
         //Student s = new Student("6xxxxxxxx", "StudentTest");
-        s.addScore(45.15);
-        assertEquals(45.15, s.getScore());
+        s.addScore(40.05);
+        assertEquals(40.05, s.getScore());
+        s.addScore(10.00);
+        assertEquals(50.05, s.getScore());
 
     }
 
@@ -33,7 +35,7 @@ class StudentTest {
 
     @Test
     @DisplayName("ทดสอบ changeName()")
-    void changeName() {
+    void testChangeName() {
         //Student s = new Student("6xxxxxxxxx", "StudentTest");
         s.changeName("Pim");
         assertEquals("Pim", s.getName());
@@ -41,29 +43,29 @@ class StudentTest {
 
     @Test
     @DisplayName("ทดสอบ isId()")
-    void isId() {
+    void testIsId() {
         //Student s = new Student("6xxxxxxxxx", "StudentTest");
-        s.isId("6xxxxxxxx");
-        assertEquals("6xxxxxxxx", s.getId());
+        assertTrue(s.isId("6xxxxxxxx"));
+        assertFalse(s.isId("6610450960"));
     }
 
     @Test
     @DisplayName("ทดสอบ getId()")
-    void getId() {
+    void testGetId() {
         //Student s = new Student("6xxxxxxxxx", "StudentTest");
         assertEquals("6xxxxxxxx", s.getId());
     }
 
     @Test
     @DisplayName("ทดสอบ getName()")
-    void getName() {
+    void testGetName() {
         //Student s = new Student("6xxxxxxxxx", "StudentTest");
         assertEquals("StudentTest", s.getName());
     }
 
     @Test
     @DisplayName("ทดสอบ getScore()")
-    void getScore() {
+    void testGetScore() {
         //Student s = new Student("6xxxxxxxxx", "StudentTest");
         s.addScore(85);
         assertEquals(85, s.getScore());
